@@ -16,9 +16,10 @@ console.log(flattened);    // => ["a", "b", "c", "d"]
 
 arr = [10, [20, [30]]];
 
+console.log(arr.flat(Infinity));    // => [10, 20, 30]
 console.log(arr.flat());     // => [10, 20, [30]]
 console.log(arr.flat(1));    // => [10, 20, [30]]
-console.log(arr.flat(2));    // => [10, 20, 30]
+console.log(arr.flat(2));    // => [10, 20, 30
 ```
 
 > The flatMap() method combines map() and flat() into one method. It first creates a new array with the return value of a provided function and then concatenates all sub-array elements of the array. An example should make this clearer:
@@ -58,23 +59,6 @@ console.log(str.trimLeft());     // => "string   "
 console.log(str.trimRight());    // => "   string"
 ```
 > For web compatibility, trimLeft() and trimRight() will remain as aliases for trimStart() and trimEnd().
-
-## Symbol.prototype.description
-> When creating a Symbol, you can add a description to it for debugging purposes. Sometimes, it’s useful to be able to directly access the description in your code.
-
-> This ES2019 proposal adds a read-only description property to the Symbol object, which returns a string containing the description of the Symbol. Here are some examples:
-
-```js
-let sym = Symbol('foo');
-console.log(sym.description);    // => foo
-
-sym = Symbol();
-console.log(sym.description);    // => undefined
-
-// create a global symbol
-sym = Symbol.for('bar');
-console.log(sym.description);    // => bar
-```
 
 ## Optional catch binding
 > This makes a small change to the ECMAScript specification that allows you to omit the catch binding and its surrounding parentheses:
